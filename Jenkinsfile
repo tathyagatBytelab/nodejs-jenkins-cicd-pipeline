@@ -11,18 +11,21 @@ pipeline {
 
     stage('Test') {
       steps {
-        echo 'Running tests (skipped for now)...'
-        // If no tests, skip or use: sh 'echo No tests'
-        sh 'echo No tests'
+        echo 'Running tests...'
+        sh 'echo No tests yet'
       }
     }
 
-    stage('Deploy') {
+    stage('Docker Deploy') {
       steps {
-        echo 'Deploying (placeholder)...'
-        // You can replace this with Docker or other deployment
-        sh 'echo Deploy step complete'
+        echo 'Building and running Docker container...'
+        sh '''
+          docker build -t my-nodejs-app .
+          docker container rm -f my-running-app || true
+          docker run -d --name my-running-app -p 3000:3000 my-nodejs-app
+        '''
       }
     }
   }
 }
+
