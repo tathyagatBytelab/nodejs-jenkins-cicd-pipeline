@@ -31,7 +31,7 @@ Set up a Jenkins pipeline to automate the process of building, testing, and depl
 ├── package.json
 ├── README.md
 ├── screenshot/
-│ └── 7jenkins.png   # sucessfull stages like build, test, and deploy.
+│ └── 7jenkins.png 8jenkins-docker-success.png  # sucessfull stages like build, test, and deploy.
 
 ```
 ---
@@ -47,6 +47,24 @@ The pipeline includes:
 Screenshot of the working pipeline:
  - 6jenkins.png
  - 7jenkins.png 
+ - 8jenkins-docker-success.png
+---
+
+## 🚀 Docker-Based Deployment (added)
+
+This project now supports full deployment using Docker in the Jenkins pipeline.
+
+### ✅ Jenkins Stages:
+
+- Build: Installs Node.js dependencies
+- Test: Placeholder test step
+- Docker Deploy: 
+    - Builds a Docker image
+    - Runs it on port `3000` inside a container
+
+### 📸 Docker Deployment Screenshot
+
+![Jenkins Docker Deploy Success](screenshot/8jenkins-docker-success.png)
  
  ## 👤 Author
 
